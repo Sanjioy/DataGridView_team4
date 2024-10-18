@@ -41,8 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TourManager.cs" />
-    <Compile Include="Models\TourStats.cs" />
+    <Compile Include="TripService.cs" />
+    <Compile Include="Models\TripStats.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

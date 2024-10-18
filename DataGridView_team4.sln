@@ -12,7 +12,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridView_team4", "DataG
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridView_team4.Contracts", "DataGridView_team4.Contracts\DataGridView_team4.Contracts.csproj", "{B9B31FCC-8011-4BAC-A996-5D2DE4BF475A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridView_team4.Tour.Manager", "DataGridView_team4.Tour.Manager\DataGridView_team4.Tour.Manager.csproj", "{A77D93C2-B93D-49D5-8178-6662AC0DF0F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridView_team4.Tour.Service", "DataGridView_team4.Tour.Manager\DataGridView_team4.Tour.Service.csproj", "{A77D93C2-B93D-49D5-8178-6662AC0DF0F5}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B9B31FCC-8011-4BAC-A996-5D2DE4BF475A} = {B9B31FCC-8011-4BAC-A996-5D2DE4BF475A}
 	EndProjectSection

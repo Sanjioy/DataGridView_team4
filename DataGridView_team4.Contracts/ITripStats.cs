@@ -1,35 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DataGridView_team4.Contracts
+﻿namespace DataGridView_team4.Contracts
 {
     /// <summary>
     /// Интерфейс, определяющий статистические данные по турам.
     /// Позволяет получить ключевые показатели для анализа туров.
     /// </summary>
-    public interface ITourStats
+    public interface ITripStats
     {
         /// <summary>
         /// Общее количество туров.
         /// </summary>
-        int TotalCountTours { get; }
+        int TotalTrips { get; }
 
         /// <summary>
         /// Общая сумма стоимости всех туров.
         /// </summary>
-        decimal TotalSumTours { get; }
+        decimal TotalRevenue { get; }
 
         /// <summary>
         /// Количество туров с дополнительными услугами.
         /// </summary>
-        int CountToursWithDop { get; }
+        int TripsWithExtras { get; }
 
         /// <summary>
         /// Общая сумма дополнительных услуг по всем турам.
         /// </summary>
-        decimal TotalSumDop { get; }
+        decimal TotalExtras { get; }
     }
 }

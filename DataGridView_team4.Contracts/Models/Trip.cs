@@ -5,49 +5,49 @@ using System.ComponentModel.DataAnnotations;
 namespace DataGridView_team4.Contracts.Models
 {
     /// <summary>
-    /// Класс для горячего тура
+    /// Класс для описания путешествия
     /// </summary>
-    public class Tours
+    public class Trip
     {
         /// <summary>
-        /// Уникальный идентификатор тура
+        /// Уникальный идентификатор путешествия
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid TripId { get; set; }
         /// <summary>
-        /// Направление тура (точка назначения)
+        /// Локация путешествия (точка назначения)
         /// </summary>
         [Required]
         [DisplayName("Назначение")]
-        public Destination Destination { get; set; }
+        public Location Location { get; set; }
         /// <summary>
-        /// Дата вылета
+        /// Дата отправления
         /// </summary>
         [DisplayName("Дата вылета")]
         public DateTime DepartureDate { get; set; }
         /// <summary>
         /// Количество ночей
         /// </summary>
-        [DisplayName("Кол-во ночей")]
+        [DisplayName("Количество ночей")]
         public int Nights { get; set; }
         /// <summary>
         /// Стоимость за одного отдыхающего
         /// </summary>
         [DisplayName("Цена за человека")]
-        public int PricePerPerson { get; set; }
+        public int CostPerPerson { get; set; }
         /// <summary>
         /// Количество отдыхающих
         /// </summary>
-        [DisplayName("Кол-во отдыхающих")]
-        public int NumberOfPeople { get; set; }
+        [DisplayName("Количество отдыхающих")]
+        public int ParticipantCount { get; set; }
         /// <summary>
         /// Наличие Wi-Fi
         /// </summary>
-        [DisplayName("Наличие Wi-Fi")]
-        public bool HasWiFi { get; set; }
+        [DisplayName("Wi-Fi")]
+        public bool WiFiAvailable { get; set; }
         /// <summary>
         /// Доплаты
         /// </summary>
         [DisplayName("Доплаты")]
-        public int AdditionalFees { get; set; }
+        public int ExtraCharges { get; set; }
     }
 }

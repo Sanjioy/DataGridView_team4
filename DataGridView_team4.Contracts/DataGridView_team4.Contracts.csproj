@@ -42,11 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ITourManager.cs" />
-    <Compile Include="ITourStats.cs" />
-    <Compile Include="ITourStorage.cs" />
-    <Compile Include="Models\Destination.cs" />
-    <Compile Include="Models\Tours.cs" />
+    <Compile Include="ITripService.cs" />
+    <Compile Include="ITripStats.cs" />
+    <Compile Include="ITripStorage.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\Trip.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

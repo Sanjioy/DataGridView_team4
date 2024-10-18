@@ -16,10 +16,10 @@ namespace DataGridView_team4
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            var storage = new MemoryStorage();
-            var manager = new TourManager(storage);
+            var repository = new InMemoryRepository();
+            var tripManager = new TripService(repository);
 
-            Application.Run(new MainForm(manager));
+            Application.Run(new MainForm(tripManager));
         }
     }
 }

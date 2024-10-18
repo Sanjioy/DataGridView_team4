@@ -9,35 +9,35 @@ namespace DataGridView_team4
 {
     public partial class MainForm : Form
     {
-        BindingSource bindingSource;
-        private TourManager tourManager;
+        BindingSource tripBindingSource;
+        private TripService tripManager;
 
-        public MainForm(TourManager tourManager)
+        public MainForm(TripService tripManager)
         {
             InitializeComponent();
-            this.tourManager = tourManager;
+            this.tripManager = tripManager;
 
-            bindingSource = new BindingSource();
+            tripBindingSource = new BindingSource();
 
-            dataGridView1.DataSource = bindingSource;
+            dataGridView1.DataSource = tripBindingSource;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         private async void MainForm_Load(object sender, EventArgs e)
         {
-            bindingSource.DataSource = await tourManager.GetAllToursAsync();
-            dataGridView1.Columns["Id"].Visible = false;
-            await SetStats();
+            tripBindingSource.DataSource = await tripManager.GetAllTripsAsync();
+            dataGridView1.Columns["TripId"].Visible = false;
+            await UpdateStatistics();
         }
 
-        private async void BtnAddTour_Click(object sender, EventArgs e)
+        private async void BtnAddTrip_Click(object sender, EventArgs e)
         {
-            var addForm = new TourForm();
-            if (addForm.ShowDialog() == DialogResult.OK)
+            var addTripForm = new TripForm();
+            if (addTripForm.ShowDialog() == DialogResult.OK)
             {
-                await tourManager.AddTourAsync(addForm.EditableTour);
-                bindingSource.ResetBindings(false);
-                await SetStats();
+                await tripManager.AddTripAsync(addTripForm.EditableTrip);
+                tripBindingSource.ResetBindings(false);
+                await UpdateStatistics();
             }
         }
 
@@ -45,13 +45,13 @@ namespace DataGridView_team4
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                var data = (Tours)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
-                var editForm = new TourForm(data);
-                if (editForm.ShowDialog() == DialogResult.OK)
+                var selectedTrip = (Trip)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
+                var editTripForm = new TripForm(selectedTrip);
+                if (editTripForm.ShowDialog() == DialogResult.OK)
                 {
-                    await tourManager.EditTourAsync(editForm.EditableTour);
-                    bindingSource.ResetBindings(false);
-                    await SetStats();
+                    await tripManager.EditTripAsync(editTripForm.EditableTrip);
+                    tripBindingSource.ResetBindings(false);
+                    await UpdateStatistics();
                 }
             }
         }
@@ -60,37 +60,37 @@ namespace DataGridView_team4
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                var data = (Tours)dataGridView1.SelectedRows[0].DataBoundItem;
-                if (MessageBox.Show($"Удалить {data.Destination} запись?", "Удаление", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                var selectedTrip = (Trip)dataGridView1.SelectedRows[0].DataBoundItem;
+                if (MessageBox.Show($"Удалить поездку в {selectedTrip.Location}?", "Подтверждение удаления", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 {
-                    await tourManager.DeleteTourAsync(data.Id);
-                    bindingSource.ResetBindings(false);
-                    await SetStats();
+                    await tripManager.DeleteTripAsync(selectedTrip.TripId);
+                    tripBindingSource.ResetBindings(false);
+                    await UpdateStatistics();
                 };
             }
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "WiFi")
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "WiFiAvailable")
             {
-                var data = (Tours)dataGridView1.Rows[e.RowIndex].DataBoundItem;
-                e.Value = data.HasWiFi ? "Да" : "Нет";
+                var trip = (Trip)dataGridView1.Rows[e.RowIndex].DataBoundItem;
+                e.Value = trip.WiFiAvailable ? "Да" : "Нет";
             }
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "Destination")
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Location")
             {
-                var data = (Tours)dataGridView1.Rows[e.RowIndex].DataBoundItem;
-                e.Value = data.Destination.GetDisplayValue();
+                var trip = (Trip)dataGridView1.Rows[e.RowIndex].DataBoundItem;
+                e.Value = trip.Location.GetEnumDisplayValue();
             }
         }
 
-        public async Task SetStats()
+        public async Task UpdateStatistics()
         {
-            var result = await tourManager.GetStatsAsync();
-            tssTotalCount.Text = $"Общее кол-во туров: {result.TotalCountTours}";
-            tssTotalSum.Text = $"Общая сумма за все туры: {result.TotalSumTours}";
-            tssTotalSumDop.Text = $"Общая сумма доплат: {result.TotalSumDop}";
-            tssCountDop.Text = $"Количество туров с доплатами: {result.CountToursWithDop}";
+            var stats = await tripManager.GetTripStatsAsync();
+            tssTotalTrips.Text = $"Общее кол-во туров: {stats.TotalTrips}";
+            tssTotalRevenue.Text = $"Общая сумма за все туры: {stats.TotalRevenue}";
+            tssTotalExtras.Text = $"Общая сумма доплат: {stats.TotalExtras}";
+            tssTripsWithExtras.Text = $"Количество туров с доплатами: {stats.TripsWithExtras}";
         }
     }
 }

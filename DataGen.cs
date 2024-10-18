@@ -4,29 +4,29 @@ using DataGridView_team4.Contracts.Models;
 namespace DataGridView_team4
 {
     /// <summary>
-    /// Генерация данных о турах
+    /// Генерация данных о поездках
     /// </summary>
     public static class DataGen
     {
-        public static Tours CreateTour(Action<Tours> customizeTour = null)
+        public static Trip CreateTrip(Action<Trip> customizeTrip = null)
         {
-            // Создаем тур с заранее заданными значениями
-            var newTour = new Tours
+            // Создаем поездку с заранее заданными значениями
+            var newTrip = new Trip
             {
-                Id = Guid.NewGuid(),
-                Destination = Destination.USA,
-                DepartureDate = DateTime.Now.AddDays(7),  // Выезд через 7 дней
+                TripId = Guid.NewGuid(),
+                Location = Location.USA,
+                DepartureDate = DateTime.Now.AddDays(7),  // Отправление через 7 дней
                 Nights = 7,
-                PricePerPerson = 200,
-                NumberOfPeople = 2,
-                HasWiFi = true,
-                AdditionalFees = 300
+                CostPerPerson = 200,
+                ParticipantCount = 2,
+                WiFiAvailable = true,
+                ExtraCharges = 300
             };
 
-            // Если передана кастомная логика, применяем её
-            customizeTour?.Invoke(newTour);
+            // Если передана кастомная логика, применить
+            customizeTrip?.Invoke(newTrip);
 
-            return newTour;
+            return newTrip;
         }
     }
 }

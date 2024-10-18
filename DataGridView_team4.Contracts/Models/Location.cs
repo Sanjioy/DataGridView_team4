@@ -3,21 +3,21 @@
 namespace DataGridView_team4.Contracts.Models
 {
     /// <summary>
-    /// Направления для туров
+    /// Доступные локации для поездок
     /// </summary>
-    public enum Destination
+    public enum Location
     {
         [Description("США")]
         USA = 1,
 
         [Description("Голландия")]
-        Goland = 2,
+        Netherlands = 2,
 
         [Description("Китай")]
         China = 3,
 
         [Description("Канада")]
-        Canade = 4,
+        Canada = 4,
 
         [Description("Австралия")]
         Australia = 5

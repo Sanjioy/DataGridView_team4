@@ -30,10 +30,10 @@
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.tssTotalCount = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tssTotalSum = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tssTotalSumDop = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tssCountDop = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tssTotalTrips = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tssTotalRevenue = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tssTotalExtras = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tssTripsWithExtras = new System.Windows.Forms.ToolStripStatusLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.BtnAddTour = new System.Windows.Forms.ToolStripButton();
             this.BtnEditTour = new System.Windows.Forms.ToolStripButton();
@@ -58,39 +58,39 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tssTotalCount,
-            this.tssTotalSum,
-            this.tssTotalSumDop,
-            this.tssCountDop});
+            this.tssTotalTrips,
+            this.tssTotalRevenue,
+            this.tssTotalExtras,
+            this.tssTripsWithExtras});
             this.statusStrip1.Location = new System.Drawing.Point(0, 428);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(800, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // tssTotalCount
+            // tssTotalTrips
             // 
-            this.tssTotalCount.Name = "tssTotalCount";
-            this.tssTotalCount.Size = new System.Drawing.Size(79, 17);
-            this.tssTotalCount.Text = "tssTotalCount";
+            this.tssTotalTrips.Name = "tssTotalTrips";
+            this.tssTotalTrips.Size = new System.Drawing.Size(79, 17);
+            this.tssTotalTrips.Text = "tssTotalTrips";
             // 
-            // tssTotalSum
+            // tssTotalRevenue
             // 
-            this.tssTotalSum.Name = "tssTotalSum";
-            this.tssTotalSum.Size = new System.Drawing.Size(70, 17);
-            this.tssTotalSum.Text = "tssTotalSum";
+            this.tssTotalRevenue.Name = "tssTotalRevenue";
+            this.tssTotalRevenue.Size = new System.Drawing.Size(70, 17);
+            this.tssTotalRevenue.Text = "tssTotalRevenue";
             // 
-            // tssTotalSumDop
+            // tssTotalExtras
             // 
-            this.tssTotalSumDop.Name = "tssTotalSumDop";
-            this.tssTotalSumDop.Size = new System.Drawing.Size(92, 17);
-            this.tssTotalSumDop.Text = "tssTotalSumDop";
+            this.tssTotalExtras.Name = "tssTotalExtras";
+            this.tssTotalExtras.Size = new System.Drawing.Size(92, 17);
+            this.tssTotalExtras.Text = "tssTotalExtras";
             // 
-            // tssCountDop
+            // tssTripsWithExtras
             // 
-            this.tssCountDop.Name = "tssCountDop";
-            this.tssCountDop.Size = new System.Drawing.Size(76, 17);
-            this.tssCountDop.Text = "tssCountDop";
+            this.tssTripsWithExtras.Name = "tssTripsWithExtras";
+            this.tssTripsWithExtras.Size = new System.Drawing.Size(76, 17);
+            this.tssTripsWithExtras.Text = "tssTripsWithExtras";
             // 
             // dataGridView1
             // 
@@ -112,7 +112,7 @@
             this.BtnAddTour.Name = "BtnAddTour";
             this.BtnAddTour.Size = new System.Drawing.Size(23, 22);
             this.BtnAddTour.Text = "toolStripButton1";
-            this.BtnAddTour.Click += new System.EventHandler(this.BtnAddTour_Click);
+            this.BtnAddTour.Click += new System.EventHandler(this.BtnAddTrip_Click);
             // 
             // BtnEditTour
             // 
@@ -162,10 +162,10 @@
         private System.Windows.Forms.ToolStripButton BtnEditTour;
         private System.Windows.Forms.ToolStripButton BtnRemoveTour;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel tssTotalCount;
-        private System.Windows.Forms.ToolStripStatusLabel tssTotalSum;
-        private System.Windows.Forms.ToolStripStatusLabel tssTotalSumDop;
-        private System.Windows.Forms.ToolStripStatusLabel tssCountDop;
+        private System.Windows.Forms.ToolStripStatusLabel tssTotalTrips;
+        private System.Windows.Forms.ToolStripStatusLabel tssTotalRevenue;
+        private System.Windows.Forms.ToolStripStatusLabel tssTotalExtras;
+        private System.Windows.Forms.ToolStripStatusLabel tssTripsWithExtras;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

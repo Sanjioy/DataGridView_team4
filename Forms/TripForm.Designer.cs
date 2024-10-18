@@ -1,6 +1,6 @@
 ﻿namespace DataGridView_team4.Forms
 {
-    partial class TourForm
+    partial class TripForm
     {
         /// <summary>
         /// Required designer variable.
@@ -42,21 +42,21 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.cbxWIFI = new System.Windows.Forms.CheckBox();
-            this.cmbxDirection = new System.Windows.Forms.ComboBox();
-            this.dtmDeparture = new System.Windows.Forms.DateTimePicker();
-            this.numNights = new System.Windows.Forms.NumericUpDown();
-            this.numSumPers = new System.Windows.Forms.NumericUpDown();
-            this.numCountPers = new System.Windows.Forms.NumericUpDown();
-            this.numSumExtra = new System.Windows.Forms.NumericUpDown();
+            this.cbxWiFi = new System.Windows.Forms.CheckBox();
+            this.cmbxLocation = new System.Windows.Forms.ComboBox();
+            this.dtmDepartureDate = new System.Windows.Forms.DateTimePicker();
+            this.numNightsCount = new System.Windows.Forms.NumericUpDown();
+            this.numPricePerPerson = new System.Windows.Forms.NumericUpDown();
+            this.numPeopleCount = new System.Windows.Forms.NumericUpDown();
+            this.numExtraFees = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numNights)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numSumPers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numCountPers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numSumExtra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numNightsCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPricePerPerson)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPeopleCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numExtraFees)).BeginInit();
             this.SuspendLayout();
             // 
             // errorProvider1
@@ -121,7 +121,7 @@
             this.btnOK.TabIndex = 0;
             this.btnOK.Text = "ОК";
             this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOk_Click);
+            this.btnOK.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // label2
             // 
@@ -177,92 +177,92 @@
             this.label7.TabIndex = 7;
             this.label7.Text = "Доплаты";
             // 
-            // cbxWIFI
+            // cbxWiFi
             // 
-            this.cbxWIFI.AutoSize = true;
-            this.cbxWIFI.Location = new System.Drawing.Point(47, 340);
-            this.cbxWIFI.Name = "cbxWIFI";
-            this.cbxWIFI.Size = new System.Drawing.Size(98, 17);
-            this.cbxWIFI.TabIndex = 8;
-            this.cbxWIFI.Text = "Наличие WI-FI";
-            this.cbxWIFI.UseVisualStyleBackColor = true;
+            this.cbxWiFi.AutoSize = true;
+            this.cbxWiFi.Location = new System.Drawing.Point(47, 340);
+            this.cbxWiFi.Name = "cbxWiFi";
+            this.cbxWiFi.Size = new System.Drawing.Size(98, 17);
+            this.cbxWiFi.TabIndex = 8;
+            this.cbxWiFi.Text = "Наличие WI-FI";
+            this.cbxWiFi.UseVisualStyleBackColor = true;
             // 
-            // cmbxDirection
+            // cmbxLocation
             // 
-            this.cmbxDirection.FormattingEnabled = true;
-            this.cmbxDirection.Location = new System.Drawing.Point(245, 132);
-            this.cmbxDirection.Name = "cmbxDirection";
-            this.cmbxDirection.Size = new System.Drawing.Size(214, 21);
-            this.cmbxDirection.TabIndex = 9;
-            this.cmbxDirection.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cmbxDirection_DrawItem);
+            this.cmbxLocation.FormattingEnabled = true;
+            this.cmbxLocation.Location = new System.Drawing.Point(245, 132);
+            this.cmbxLocation.Name = "cmbxLocation";
+            this.cmbxLocation.Size = new System.Drawing.Size(214, 21);
+            this.cmbxLocation.TabIndex = 9;
+            this.cmbxLocation.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cmbxLocation_DrawItem);
             // 
-            // dtmDeparture
+            // dtmDepartureDate
             // 
-            this.dtmDeparture.Location = new System.Drawing.Point(245, 166);
-            this.dtmDeparture.Name = "dtmDeparture";
-            this.dtmDeparture.Size = new System.Drawing.Size(214, 20);
-            this.dtmDeparture.TabIndex = 10;
+            this.dtmDepartureDate.Location = new System.Drawing.Point(245, 166);
+            this.dtmDepartureDate.Name = "dtmDepartureDate";
+            this.dtmDepartureDate.Size = new System.Drawing.Size(214, 20);
+            this.dtmDepartureDate.TabIndex = 10;
             // 
-            // numNights
+            // numNightsCount
             // 
-            this.numNights.Location = new System.Drawing.Point(245, 204);
-            this.numNights.Maximum = new decimal(new int[] {
+            this.numNightsCount.Location = new System.Drawing.Point(245, 204);
+            this.numNightsCount.Maximum = new decimal(new int[] {
             31,
             0,
             0,
             0});
-            this.numNights.Name = "numNights";
-            this.numNights.Size = new System.Drawing.Size(214, 20);
-            this.numNights.TabIndex = 11;
+            this.numNightsCount.Name = "numNightsCount";
+            this.numNightsCount.Size = new System.Drawing.Size(214, 20);
+            this.numNightsCount.TabIndex = 11;
             // 
-            // numSumPers
+            // numPricePerPerson
             // 
-            this.numSumPers.Location = new System.Drawing.Point(245, 239);
-            this.numSumPers.Maximum = new decimal(new int[] {
+            this.numPricePerPerson.Location = new System.Drawing.Point(245, 239);
+            this.numPricePerPerson.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
-            this.numSumPers.Name = "numSumPers";
-            this.numSumPers.Size = new System.Drawing.Size(214, 20);
-            this.numSumPers.TabIndex = 12;
+            this.numPricePerPerson.Name = "numPricePerPerson";
+            this.numPricePerPerson.Size = new System.Drawing.Size(214, 20);
+            this.numPricePerPerson.TabIndex = 12;
             // 
-            // numCountPers
+            // numPeopleCount
             // 
-            this.numCountPers.Location = new System.Drawing.Point(245, 272);
-            this.numCountPers.Maximum = new decimal(new int[] {
+            this.numPeopleCount.Location = new System.Drawing.Point(245, 272);
+            this.numPeopleCount.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.numCountPers.Name = "numCountPers";
-            this.numCountPers.Size = new System.Drawing.Size(214, 20);
-            this.numCountPers.TabIndex = 13;
+            this.numPeopleCount.Name = "numPeopleCount";
+            this.numPeopleCount.Size = new System.Drawing.Size(214, 20);
+            this.numPeopleCount.TabIndex = 13;
             // 
-            // numSumExtra
+            // numExtraFees
             // 
-            this.numSumExtra.Location = new System.Drawing.Point(245, 307);
-            this.numSumExtra.Maximum = new decimal(new int[] {
+            this.numExtraFees.Location = new System.Drawing.Point(245, 307);
+            this.numExtraFees.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
-            this.numSumExtra.Name = "numSumExtra";
-            this.numSumExtra.Size = new System.Drawing.Size(214, 20);
-            this.numSumExtra.TabIndex = 14;
+            this.numExtraFees.Name = "numExtraFees";
+            this.numExtraFees.Size = new System.Drawing.Size(214, 20);
+            this.numExtraFees.TabIndex = 14;
             // 
-            // TourForm
+            // TripForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(487, 468);
-            this.Controls.Add(this.numSumExtra);
-            this.Controls.Add(this.numCountPers);
-            this.Controls.Add(this.numSumPers);
-            this.Controls.Add(this.numNights);
-            this.Controls.Add(this.dtmDeparture);
-            this.Controls.Add(this.cmbxDirection);
-            this.Controls.Add(this.cbxWIFI);
+            this.Controls.Add(this.numExtraFees);
+            this.Controls.Add(this.numPeopleCount);
+            this.Controls.Add(this.numPricePerPerson);
+            this.Controls.Add(this.numNightsCount);
+            this.Controls.Add(this.dtmDepartureDate);
+            this.Controls.Add(this.cmbxLocation);
+            this.Controls.Add(this.cbxWiFi);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -271,18 +271,18 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "TourForm";
-            this.Text = "TourForm";
+            this.Name = "TripForm";
+            this.Text = "TripForm";
             this.Load += new System.EventHandler(this.TourForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numNights)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numSumPers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numCountPers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numSumExtra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numNightsCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPricePerPerson)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPeopleCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numExtraFees)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,13 +294,13 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.NumericUpDown numSumExtra;
-        private System.Windows.Forms.NumericUpDown numCountPers;
-        private System.Windows.Forms.NumericUpDown numSumPers;
-        private System.Windows.Forms.NumericUpDown numNights;
-        private System.Windows.Forms.DateTimePicker dtmDeparture;
-        private System.Windows.Forms.ComboBox cmbxDirection;
-        private System.Windows.Forms.CheckBox cbxWIFI;
+        private System.Windows.Forms.NumericUpDown numExtraFees;
+        private System.Windows.Forms.NumericUpDown numPeopleCount;
+        private System.Windows.Forms.NumericUpDown numPricePerPerson;
+        private System.Windows.Forms.NumericUpDown numNightsCount;
+        private System.Windows.Forms.DateTimePicker dtmDepartureDate;
+        private System.Windows.Forms.ComboBox cmbxLocation;
+        private System.Windows.Forms.CheckBox cbxWiFi;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
