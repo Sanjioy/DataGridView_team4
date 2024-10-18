@@ -206,6 +206,11 @@
             // numNights
             // 
             this.numNights.Location = new System.Drawing.Point(245, 204);
+            this.numNights.Maximum = new decimal(new int[] {
+            31,
+            0,
+            0,
+            0});
             this.numNights.Name = "numNights";
             this.numNights.Size = new System.Drawing.Size(214, 20);
             this.numNights.TabIndex = 11;
@@ -213,6 +218,11 @@
             // numSumPers
             // 
             this.numSumPers.Location = new System.Drawing.Point(245, 239);
+            this.numSumPers.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.numSumPers.Name = "numSumPers";
             this.numSumPers.Size = new System.Drawing.Size(214, 20);
             this.numSumPers.TabIndex = 12;
@@ -220,6 +230,11 @@
             // numCountPers
             // 
             this.numCountPers.Location = new System.Drawing.Point(245, 272);
+            this.numCountPers.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numCountPers.Name = "numCountPers";
             this.numCountPers.Size = new System.Drawing.Size(214, 20);
             this.numCountPers.TabIndex = 13;
@@ -227,6 +242,11 @@
             // numSumExtra
             // 
             this.numSumExtra.Location = new System.Drawing.Point(245, 307);
+            this.numSumExtra.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.numSumExtra.Name = "numSumExtra";
             this.numSumExtra.Size = new System.Drawing.Size(214, 20);
             this.numSumExtra.TabIndex = 14;

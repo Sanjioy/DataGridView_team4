@@ -28,19 +28,16 @@ namespace DataGridView_team4.Contracts.Models
         /// Количество ночей
         /// </summary>
         [DisplayName("Кол-во ночей")]
-        [Range(1, 31)]
         public int Nights { get; set; }
         /// <summary>
         /// Стоимость за одного отдыхающего
         /// </summary>
         [DisplayName("Цена за человека")]
-        [Range(1, 50000)]
         public int PricePerPerson { get; set; }
         /// <summary>
         /// Количество отдыхающих
         /// </summary>
         [DisplayName("Кол-во отдыхающих")]
-        [Range(1, 10)]
         public int NumberOfPeople { get; set; }
         /// <summary>
         /// Наличие Wi-Fi
@@ -51,11 +48,6 @@ namespace DataGridView_team4.Contracts.Models
         /// Доплаты
         /// </summary>
         [DisplayName("Доплаты")]
-        [Range(1, 50000)]
         public int AdditionalFees { get; set; }
-        /// <summary>
-        /// Общая стоимость тура
-        /// </summary>
-        // public decimal TotalCost => (PricePerPerson * NumberOfPeople) + AdditionalFees;
     }
 }
