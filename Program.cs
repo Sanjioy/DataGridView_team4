@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataGridView_team4.Memory.Storage;
+using DataGridView_team4.Tour.Manager;
 
 namespace DataGridView_team4
 {
@@ -16,7 +15,11 @@ namespace DataGridView_team4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            var storage = new MemoryStorage();
+            var manager = new TourManager(storage);
+
+            Application.Run(new MainForm(manager));
         }
     }
 }
