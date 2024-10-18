@@ -28,35 +28,78 @@ namespace DataGridView_team4
         {
             var controlPropName = GetPropertyName(controlProperty);
             var sourcePropName = GetPropertyName(sourceProperty);
-            control.DataBindings.Add(new Binding(controlPropName, dataSource, sourcePropName,
-                false,
-                DataSourceUpdateMode.OnPropertyChanged));
 
-            // Валидация
-            if (validationProvider != null)
+            BindControlToSource(control, controlPropName, dataSource, sourcePropName);
+            SetupValidationIfNeeded(control, dataSource, sourcePropName, validationProvider);
+        }
+
+        /// <summary>
+        /// Привязка свойства управления к источнику данных
+        /// </summary>
+        private static void BindControlToSource<TControl, TSource>(TControl control,
+            string controlPropName, TSource dataSource, string sourcePropName)
+            where TControl : Control
+            where TSource : class
+        {
+            control.DataBindings.Add(new Binding(controlPropName, dataSource, sourcePropName,
+                false, DataSourceUpdateMode.OnPropertyChanged));
+        }
+
+        /// <summary>
+        /// Настройка валидации при необходимости
+        /// </summary>
+        private static void SetupValidationIfNeeded<TControl, TSource>(TControl control,
+            TSource dataSource, string sourcePropName, ErrorProvider validationProvider)
+            where TControl : Control
+            where TSource : class
+        {
+            if (validationProvider == null)
             {
-                var sourcePropInfo = dataSource.GetType().GetProperty(sourcePropName);
-                if (sourcePropInfo != null)
+                return;
+            }
+            var sourcePropInfo = dataSource.GetType().GetProperty(sourcePropName);
+            if (sourcePropInfo == null)
+            {
+                return;
+            }
+
+            var validators = sourcePropInfo.GetCustomAttributes<ValidationAttribute>();
+            if (validators?.Any() == true)
+            {
+                control.Validating += (s, e) =>
                 {
-                    var validators = sourcePropInfo.GetCustomAttributes<ValidationAttribute>();
-                    if (validators?.Any() == true)
-                    {
-                        control.Validating += (s, e) =>
-                        {
-                            var context = new ValidationContext(dataSource);
-                            var validationResults = new List<ValidationResult>();
-                            validationProvider.SetError(control, string.Empty);
-                            if (!Validator.TryValidateObject(dataSource, context, validationResults, validateAllProperties: true))
-                            {
-                                foreach (var validationError in validationResults.Where(x => x.MemberNames.Contains(sourcePropName)))
-                                {
-                                    validationProvider.SetError(control, validationError.ErrorMessage);
-                                    Debug.WriteLine($"Ошибка в поле {sourcePropName}: {validationError.ErrorMessage}");
-                                }
-                            }
-                        };
-                    }
-                }
+                    PerformValidation(control, dataSource, sourcePropName, validationProvider);
+                };
+            }
+        }
+
+        /// <summary>
+        /// Выполнение валидации
+        /// </summary>
+        private static void PerformValidation<TSource>(Control control, TSource dataSource,
+            string sourcePropName, ErrorProvider validationProvider)
+            where TSource : class
+        {
+            var context = new ValidationContext(dataSource);
+            var validationResults = new List<ValidationResult>();
+            validationProvider.SetError(control, string.Empty);
+
+            if (!Validator.TryValidateObject(dataSource, context, validationResults, validateAllProperties: true))
+            {
+                DisplayValidationErrors(validationResults, sourcePropName, control, validationProvider);
+            }
+        }
+
+        /// <summary>
+        /// Отображение ошибок валидации
+        /// </summary>
+        private static void DisplayValidationErrors(IEnumerable<ValidationResult> validationResults,
+            string sourcePropName, Control control, ErrorProvider validationProvider)
+        {
+            foreach (var validationError in validationResults.Where(x => x.MemberNames.Contains(sourcePropName)))
+            {
+                validationProvider.SetError(control, validationError.ErrorMessage);
+                Debug.WriteLine($"Ошибка в поле {sourcePropName}: {validationError.ErrorMessage}");
             }
         }
 
@@ -96,7 +139,7 @@ namespace DataGridView_team4
             if (fieldInfo != null)
             {
                 var attributes = fieldInfo.GetCustomAttributes(typeof(DescriptionAttribute), true);
-                if (attributes != null && attributes.Length > 0)
+                if (attributes.Length > 0)
                 {
                     description = ((DescriptionAttribute)attributes[0]).Description;
                 }

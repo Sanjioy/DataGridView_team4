@@ -122,7 +122,7 @@
             this.BtnEditTour.Name = "BtnEditTour";
             this.BtnEditTour.Size = new System.Drawing.Size(23, 22);
             this.BtnEditTour.Text = "toolStripButton2";
-            this.BtnEditTour.Click += new System.EventHandler(this.BtnEditTour_Click);
+            this.BtnEditTour.Click += new System.EventHandler(this.BtnEditTrip_Click);
             // 
             // BtnRemoveTour
             // 
@@ -132,7 +132,7 @@
             this.BtnRemoveTour.Name = "BtnRemoveTour";
             this.BtnRemoveTour.Size = new System.Drawing.Size(23, 22);
             this.BtnRemoveTour.Text = "toolStripButton3";
-            this.BtnRemoveTour.Click += new System.EventHandler(this.BtnRemoveTour_Click);
+            this.BtnRemoveTour.Click += new System.EventHandler(this.BtnRemoveTrip_Click);
             // 
             // MainForm
             // 

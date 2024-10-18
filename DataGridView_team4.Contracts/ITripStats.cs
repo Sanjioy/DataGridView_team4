@@ -10,17 +10,14 @@
         /// Общее количество туров.
         /// </summary>
         int TotalTrips { get; }
-
         /// <summary>
         /// Общая сумма стоимости всех туров.
         /// </summary>
         decimal TotalRevenue { get; }
-
         /// <summary>
         /// Количество туров с дополнительными услугами.
         /// </summary>
         int TripsWithExtras { get; }
-
         /// <summary>
         /// Общая сумма дополнительных услуг по всем турам.
         /// </summary>

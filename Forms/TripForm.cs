@@ -51,7 +51,11 @@ namespace DataGridView_team4.Forms
             {
                 cmbxLocation.Items.Add(item);
             }
+            BindControlsToData();
+        }
 
+        private void BindControlsToData()
+        {
             // Привязка данных к элементам управления
             cmbxLocation.BindData(t => t.SelectedItem, currentTrip, s => s.Location);
             dtmDepartureDate.BindData(t => t.Value, currentTrip, s => s.DepartureDate);

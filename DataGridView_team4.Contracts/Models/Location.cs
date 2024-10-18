@@ -3,7 +3,7 @@
 namespace DataGridView_team4.Contracts.Models
 {
     /// <summary>
-    /// Доступные локации для поездок
+    /// Перечисление доступных локаций для поездок
     /// </summary>
     public enum Location
     {
