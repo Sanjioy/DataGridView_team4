@@ -4,6 +4,28 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridView_team4", "DataGridView_team4.csproj", "{E759A141-7C60-4D42-92D0-42C71AD490D3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A77D93C2-B93D-49D5-8178-6662AC0DF0F5} = {A77D93C2-B93D-49D5-8178-6662AC0DF0F5}
+		{B9B31FCC-8011-4BAC-A996-5D2DE4BF475A} = {B9B31FCC-8011-4BAC-A996-5D2DE4BF475A}
+		{EE031206-F2FE-4D3D-9A31-65194708E79F} = {EE031206-F2FE-4D3D-9A31-65194708E79F}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridView_team4.Contracts", "DataGridView_team4.Contracts\DataGridView_team4.Contracts.csproj", "{B9B31FCC-8011-4BAC-A996-5D2DE4BF475A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridView_team4.Tour.Service", "DataGridView_team4.Tour.Manager\DataGridView_team4.Tour.Service.csproj", "{A77D93C2-B93D-49D5-8178-6662AC0DF0F5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B9B31FCC-8011-4BAC-A996-5D2DE4BF475A} = {B9B31FCC-8011-4BAC-A996-5D2DE4BF475A}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridView_team4.Memory.Storage", "DataGridView_team4.Memory.Storage\DataGridView_team4.Memory.Storage.csproj", "{EE031206-F2FE-4D3D-9A31-65194708E79F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B9B31FCC-8011-4BAC-A996-5D2DE4BF475A} = {B9B31FCC-8011-4BAC-A996-5D2DE4BF475A}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3651A511-E710-44F6-90F9-F8A70271BD41}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +37,18 @@ Global
 		{E759A141-7C60-4D42-92D0-42C71AD490D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E759A141-7C60-4D42-92D0-42C71AD490D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E759A141-7C60-4D42-92D0-42C71AD490D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9B31FCC-8011-4BAC-A996-5D2DE4BF475A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9B31FCC-8011-4BAC-A996-5D2DE4BF475A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9B31FCC-8011-4BAC-A996-5D2DE4BF475A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9B31FCC-8011-4BAC-A996-5D2DE4BF475A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A77D93C2-B93D-49D5-8178-6662AC0DF0F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A77D93C2-B93D-49D5-8178-6662AC0DF0F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A77D93C2-B93D-49D5-8178-6662AC0DF0F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A77D93C2-B93D-49D5-8178-6662AC0DF0F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE031206-F2FE-4D3D-9A31-65194708E79F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE031206-F2FE-4D3D-9A31-65194708E79F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE031206-F2FE-4D3D-9A31-65194708E79F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE031206-F2FE-4D3D-9A31-65194708E79F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
