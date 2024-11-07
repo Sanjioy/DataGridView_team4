@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace DataGridView_team4.Contracts.Models
+namespace DataGridView_team4.Standart.Contracts.Models
 {
     /// <summary>
     /// Перечисление доступных локаций для поездок

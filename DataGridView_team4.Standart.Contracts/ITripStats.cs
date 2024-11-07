@@ -1,4 +1,4 @@
-﻿namespace DataGridView_team4.Contracts
+﻿namespace DataGridView_team4.Standart.Contracts
 {
     /// <summary>
     /// Интерфейс, определяющий статистические данные по турам.

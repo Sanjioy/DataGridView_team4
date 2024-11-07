@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <BuildPackage>true</BuildPackage>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageLicenseExpression>MIT OR Apache-2.0</PackageLicenseExpression>
+    <PackageId>Sanji.Denchik.TourTrip</PackageId>
+    <Title>TourTrip</Title>
+    <Version>1.3.1</Version>
+    <Authors>Denchik</Authors>
+    <Company>Sanji</Company>
+    <Description>package for studying.</Description>
+    <Product>TourTrip</Product>
+    <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);CopyProjectReferencesToPackage</TargetsForTfmSpecificBuildOutput>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataGridView_team4.Standart.Contracts\DataGridView_team4.Standart.Contracts.csproj">
+    <Reference0utputAssembly>true</Reference0utputAssembly>
+    <IncludeAssets>DataGridView_team4.Standart.Contracts.dll</IncludeAssets>
+    </ProjectReference>
+  </ItemGroup>
+
+  <Target DependsOnTargets="ResolveReferences" Name="CopyProjectReferencesToPackage">
+    <ItemGroup>
+      <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths->WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))"/>
+    </ItemGroup>
+  </Target>
+
+</Project>

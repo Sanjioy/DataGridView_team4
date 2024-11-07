@@ -1,5 +1,5 @@
 ﻿using System;
-using DataGridView_team4.Contracts.Models;
+using DataGridView_team4.Standart.Contracts.Models;
 
 namespace DataGridView_team4
 {

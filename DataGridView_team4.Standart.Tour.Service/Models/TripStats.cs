@@ -1,6 +1,6 @@
-﻿using DataGridView_team4.Contracts;
+﻿using DataGridView_team4.Standart.Contracts;
 
-namespace DataGridView_team4.Tour.Manager.Models
+namespace DataGridView_team4.Standart.Tour.Service.Models
 {
     /// <inheritdoc cref="ITripStats"/>
     public class TripStats : ITripStats

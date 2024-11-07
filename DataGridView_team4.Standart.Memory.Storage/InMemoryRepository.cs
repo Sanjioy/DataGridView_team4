@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DataGridView_team4.Contracts;
+using DataGridView_team4.Standart.Contracts;
 
-namespace DataGridView_team4.Memory.Storage
+namespace DataGridView_team4.Standart.Memory.Storage
 {
     /// <inheritdoc cref="ITripStorage" />
     public class InMemoryRepository : ITripStorage
