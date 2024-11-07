@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using DataGridView_team4.Standart.Memory.Storage;
 using DataGridView_team4.Standart.Tour.Manager;
+using Microsoft.Extensions.Logging;
 
 namespace DataGridView_team4
 {
@@ -31,8 +32,10 @@ namespace DataGridView_team4
         /// </summary>
         private static void RunApplication()
         {
+            var factory = LoggerFactory.Create(buelder => buelder.AddDebug());
+            var logger = factory.CreateLogger(nameof(DataGrid));
             var repository = new InMemoryRepository();
-            var tripManager = new TripService(repository);
+            var tripManager = new TripService(repository, logger);
             Application.Run(new MainForm(tripManager));
         }
     }

@@ -70,10 +70,9 @@ namespace DataGridView_team4.Standart.Tour.Manager
         {
             var stopWatch = new Stopwatch();
             stopWatch.Start();
-            Trip result = null;
             try
             {
-                result = await tripStorage.AddTripAsync(trip);
+                await tripStorage.EditTripAsync(trip);
                 logger.LogInformation(string.Format(StopwatchTemplate, nameof(ITripService.AddTripAsync), trip, stopWatch.ElapsedMilliseconds));
             }
             catch (Exception ex)
