@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DataGridView_team4.Tour.Manager;
-using DataGridView_team4.Contracts.Models;
+using DataGridView_team4.Standart.Tour.Manager;
 using DataGridView_team4.Forms;
+using DataGridView_team4.Standart.Contracts.Models;
 
 namespace DataGridView_team4
 {

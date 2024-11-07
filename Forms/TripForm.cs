@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
-using DataGridView_team4.Contracts.Models;
+using DataGridView_team4.Standart.Contracts.Models;
 
 namespace DataGridView_team4.Forms
 {
@@ -111,8 +112,17 @@ namespace DataGridView_team4.Forms
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.Cancel;
+            var validationContext = new ValidationContext(currentTrip);
+            var validationResults = new List<ValidationResult>();
+            Validator.TryValidateObject(currentTrip, validationContext, validationResults, validateAllProperties: true);
+            if (validationResults.Any())
+            {
+                return;
+            }
+
             Close();
+            DialogResult =
+            DialogResult.OK;
         }
     }
 }

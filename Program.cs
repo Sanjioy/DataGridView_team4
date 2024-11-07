@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
-using DataGridView_team4.Memory.Storage;
-using DataGridView_team4.Tour.Manager;
+using DataGridView_team4.Standart.Memory.Storage;
+using DataGridView_team4.Standart.Tour.Manager;
 
 namespace DataGridView_team4
 {
