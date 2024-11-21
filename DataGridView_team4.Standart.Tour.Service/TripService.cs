@@ -15,8 +15,8 @@ namespace DataGridView_team4.Standart.Tour.Manager
     public class TripService : ITripService
     {
         private readonly ILogger logger;
-        private const string StopwatchTemplate = "Операция {0} c id {1} выполнялась {2} мс";
-        private const string StopwatchNon = "Операция {0} c id {1}  НЕ выполнилась";
+        private const string StopwatchTemplate = "Операция {Operation} c id {Id} выполнялась {Milliseconds} мс";
+        private const string StopwatchNon = "Операция {Operation} c id {Id}  НЕ выполнилась";
         private ITripStorage tripStorage;
 
         public TripService(ITripStorage tripStorage, ILogger logger)
@@ -34,11 +34,11 @@ namespace DataGridView_team4.Standart.Tour.Manager
             try
             {
                 result = await tripStorage.AddTripAsync(trip);
-                logger.LogInformation(string.Format(StopwatchTemplate, nameof(ITripService.AddTripAsync), trip, stopWatch.ElapsedMilliseconds));
+                logger.LogInformation(StopwatchTemplate, nameof(ITripService.AddTripAsync), trip, stopWatch.ElapsedMilliseconds);
             }
             catch (Exception ex)
             {
-                logger.LogInformation(string.Format(StopwatchNon, nameof(ITripService.AddTripAsync), trip));
+                logger.LogInformation(StopwatchNon, nameof(ITripService.AddTripAsync), trip);
             }
             stopWatch.Stop();
             return result;
@@ -53,11 +53,11 @@ namespace DataGridView_team4.Standart.Tour.Manager
             try
             {
                 result = await tripStorage.DeleteTripAsync(id);
-                logger.LogInformation(string.Format(StopwatchTemplate, nameof(ITripService.AddTripAsync), id, stopWatch.ElapsedMilliseconds));
+                logger.LogInformation(StopwatchTemplate, nameof(ITripService.AddTripAsync), id, stopWatch.ElapsedMilliseconds);
             }
             catch (Exception ex)
             {
-                logger.LogInformation(string.Format(StopwatchNon, nameof(ITripService.AddTripAsync), id));
+                logger.LogInformation(StopwatchNon, nameof(ITripService.AddTripAsync), id);
             }
             stopWatch.Stop();
             return result;
@@ -73,11 +73,11 @@ namespace DataGridView_team4.Standart.Tour.Manager
             try
             {
                 await tripStorage.EditTripAsync(trip);
-                logger.LogInformation(string.Format(StopwatchTemplate, nameof(ITripService.AddTripAsync), trip, stopWatch.ElapsedMilliseconds));
+                logger.LogInformation(StopwatchTemplate, nameof(ITripService.AddTripAsync), trip, stopWatch.ElapsedMilliseconds);
             }
             catch (Exception ex)
             {
-                logger.LogInformation(string.Format(StopwatchNon, nameof(ITripService.AddTripAsync), trip));
+                logger.LogInformation(StopwatchNon, nameof(ITripService.AddTripAsync), trip);
             }
             stopWatch.Stop();
         }

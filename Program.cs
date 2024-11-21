@@ -3,6 +3,8 @@ using System.Windows.Forms;
 using DataGridView_team4.Standart.Memory.Storage;
 using DataGridView_team4.Standart.Tour.Manager;
 using Microsoft.Extensions.Logging;
+using Serilog;
+using Serilog.Extensions.Logging;
 
 namespace DataGridView_team4
 {
@@ -32,8 +34,13 @@ namespace DataGridView_team4
         /// </summary>
         private static void RunApplication()
         {
-            var factory = LoggerFactory.Create(buelder => buelder.AddDebug());
-            var logger = factory.CreateLogger(nameof(DataGrid));
+            var serilogLogger = new LoggerConfiguration()
+                .MinimumLevel.Verbose()
+                .WriteTo.Seq("http://localhost:5341/", apiKey: "jpeBjemf6H0uJ7diYcUs")
+                .CreateLogger();
+
+            var logger = new SerilogLoggerFactory(serilogLogger)
+                .CreateLogger("datagrid");
             var repository = new InMemoryRepository();
             var tripManager = new TripService(repository, logger);
             Application.Run(new MainForm(tripManager));
