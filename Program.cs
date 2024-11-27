@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
-using DataGridView_team4.Standart.Memory.Storage;
+using DataGridView_team4.Standart.Storage.Database;
 using DataGridView_team4.Standart.Tour.Manager;
-using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Extensions.Logging;
 
@@ -41,7 +40,7 @@ namespace DataGridView_team4
 
             var logger = new SerilogLoggerFactory(serilogLogger)
                 .CreateLogger("datagrid");
-            var repository = new InMemoryRepository();
+            var repository = new DatabaseTourStorage();
             var tripManager = new TripService(repository, logger);
             Application.Run(new MainForm(tripManager));
         }

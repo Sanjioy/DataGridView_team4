@@ -50,6 +50,7 @@ namespace DataGridView_team4
             {
                 await tripService.AddTripAsync(addTripForm.EditableTrip);
                 RefreshTrips();
+                await LoadTripsAsync();
                 await UpdateStatistics();
             }
         }
@@ -64,6 +65,7 @@ namespace DataGridView_team4
                 {
                     await tripService.EditTripAsync(editTripForm.EditableTrip);
                     RefreshTrips();
+                    await LoadTripsAsync();
                     await UpdateStatistics();
                 }
             }
@@ -84,6 +86,7 @@ namespace DataGridView_team4
                 {
                     await tripService.DeleteTripAsync(selectedTrip.TripId);
                     RefreshTrips();
+                    await LoadTripsAsync();
                     await UpdateStatistics();
                 }
             }

@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridView_team4.Standart
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridView_team4.Standart.Tour.Service.Test", "DataGridView_team4.Standart.Tour.Service.Test\DataGridView_team4.Standart.Tour.Service.Test.csproj", "{66BF6CFF-E4E5-486A-B32F-95B0CD058479}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGridView_team4.Standart.Storage.Database", "DataGridView_team4.Standart.Storage.Database\DataGridView_team4.Standart.Storage.Database.csproj", "{92EFB7DC-537F-4758-9A98-354BBC1DEAF0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,10 @@ Global
 		{66BF6CFF-E4E5-486A-B32F-95B0CD058479}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66BF6CFF-E4E5-486A-B32F-95B0CD058479}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66BF6CFF-E4E5-486A-B32F-95B0CD058479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92EFB7DC-537F-4758-9A98-354BBC1DEAF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92EFB7DC-537F-4758-9A98-354BBC1DEAF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92EFB7DC-537F-4758-9A98-354BBC1DEAF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92EFB7DC-537F-4758-9A98-354BBC1DEAF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
